@@ -10,13 +10,22 @@
     <sprite>sprites\PH_Paper_Positions</sprite>
     <sprite>sprites\spr_circulo</sprite>
     <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\spr_wizard</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_GameRoom</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script0.gml</script>
+    <script>scripts\scr_generate.gml</script>
+    <scripts name="Reference scripts">
+      <script>scripts\scr_generateREF.gml</script>
+      <script>scripts\scr_joke1.gml</script>
+      <script>scripts\scr_joke2.gml</script>
+      <script>scripts\scr_joke3.gml</script>
+      <script>scripts\scr_joke4.gml</script>
+      <script>scripts\scr_joke5.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_PaperBox</object>
@@ -34,6 +43,21 @@
       <object>objects\obj_Position10</object>
     </objects>
     <object>objects\obj_circle</object>
+    <objects name="reference objects">
+      <object>objects\ctrl_stage_pregame</object>
+      <object>objects\ctrl_SynapsePlay</object>
+      <object>objects\ctrl_TellJoke</object>
+      <object>objects\ctrl_title</object>
+      <object>objects\ctrl_ui</object>
+      <object>objects\obj_debug1</object>
+      <object>objects\obj_dim</object>
+      <object>objects\obj_joke_thoughts</object>
+      <object>objects\obj_target</object>
+      <object>objects\obj_thought_green</object>
+      <object>objects\obj_thought_red</object>
+      <object>objects\parent_thought</object>
+    </objects>
+    <object>objects\obj_wizard</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_gameroom</room>

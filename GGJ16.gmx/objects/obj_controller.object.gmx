@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//state = wait;
+/*
 name = "paperbox"
 word[0] = "Green"
 word[1] = "Red"
@@ -37,7 +38,9 @@ word[6] = "Sixth"
 word[7] = "Seventh"
 word[8] = "8"
 word[9] = "9"
-word[10] = "10"
+word[10] = "10"*/
+globalvar winners;
+globalvar duds;
 
 </string>
           </argument>
@@ -236,7 +239,7 @@ hovering = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,obj_PaperBox);
+            <string>scr_generate();
 
 
 </string>
