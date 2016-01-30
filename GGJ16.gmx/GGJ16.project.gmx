@@ -8,8 +8,12 @@
   <sprites name="sprites">
     <sprite>sprites\PH_PaperBox</sprite>
     <sprite>sprites\PH_Paper_Positions</sprite>
+    <sprite>sprites\spr_circulo</sprite>
+    <sprite>sprites\sprite3</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_GameRoom</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script0.gml</script>
@@ -29,6 +33,7 @@
       <object>objects\obj_Position9</object>
       <object>objects\obj_Position10</object>
     </objects>
+    <object>objects\obj_circle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_gameroom</room>
