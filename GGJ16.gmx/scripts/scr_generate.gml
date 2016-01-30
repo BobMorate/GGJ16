@@ -3,6 +3,7 @@
 
 var i;
 var v_id;
+var blacklist;
 
     for (i = 0; i < 6; i++)  
         {   
