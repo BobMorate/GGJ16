@@ -29,6 +29,9 @@
     </scripts>
     <script>scripts\formatWordLists.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_parchment</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_controller</object>
     <objects name="Paper_Positions">
