@@ -79,6 +79,7 @@ keyword[9] = "Japeto"
             <kind>1</kind>
             <string>is_winner = 0;
 slot = 0;
+word="";
 
 </string>
           </argument>
@@ -127,7 +128,7 @@ slot = 0;
             <kind>1</kind>
             <string>draw_self();
 draw_set_halign(fa_center)
-draw_text_color(x,y,keyword[word_value],c_black,c_black,c_black,c_black,1);
+draw_text_color(x,y,word,c_black,c_black,c_black,c_black,1);
 
 </string>
           </argument>

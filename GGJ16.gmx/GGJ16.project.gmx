@@ -27,6 +27,7 @@
       <script>scripts\create_explosion.gml</script>
       <script>scripts\create_part_type_sprite.gml</script>
     </scripts>
+    <script>scripts\formatWordLists.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_controller</object>
