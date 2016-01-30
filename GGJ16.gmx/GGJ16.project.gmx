@@ -28,7 +28,6 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_PaperBox</object>
     <object>objects\obj_controller</object>
     <objects name="Paper_Positions">
       <object>objects\obj_Position1</object>
@@ -41,6 +40,7 @@
       <object>objects\obj_Position8</object>
       <object>objects\obj_Position9</object>
       <object>objects\obj_Position10</object>
+      <object>objects\obj_PaperBox</object>
     </objects>
     <object>objects\obj_circle</object>
     <objects name="reference objects">
