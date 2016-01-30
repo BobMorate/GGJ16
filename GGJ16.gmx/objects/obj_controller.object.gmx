@@ -41,7 +41,7 @@ word[9] = "9"
 word[10] = "10"*/
 globalvar winners;
 globalvar duds;
-
+instance_create(864,352,obj_circle);
 </string>
           </argument>
         </arguments>

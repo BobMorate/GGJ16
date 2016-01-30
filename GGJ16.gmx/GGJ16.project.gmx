@@ -11,6 +11,11 @@
     <sprite>sprites\spr_circulo</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\spr_wizard</sprite>
+    <sprites name="Particles">
+      <sprite>sprites\spr_burst_particle</sprite>
+      <sprite>sprites\spr_smoke_particle</sprite>
+      <sprite>sprites\spr_explosion_center</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_GameRoom</background>
@@ -26,6 +31,8 @@
       <script>scripts\scr_joke4.gml</script>
       <script>scripts\scr_joke5.gml</script>
     </scripts>
+    <script>scripts\create_part_type_sprite.gml</script>
+    <script>scripts\create_explosion.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_controller</object>
@@ -58,6 +65,11 @@
       <object>objects\parent_thought</object>
     </objects>
     <object>objects\obj_wizard</object>
+    <objects name="Particles">
+      <object>objects\obj_particle_control</object>
+      <object>objects\obj_particles</object>
+      <object>objects\obj_explosion_piece</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_gameroom</room>
