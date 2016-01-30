@@ -23,16 +23,10 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_generate.gml</script>
-    <scripts name="Reference scripts">
-      <script>scripts\scr_generateREF.gml</script>
-      <script>scripts\scr_joke1.gml</script>
-      <script>scripts\scr_joke2.gml</script>
-      <script>scripts\scr_joke3.gml</script>
-      <script>scripts\scr_joke4.gml</script>
-      <script>scripts\scr_joke5.gml</script>
+    <scripts name="Particle Scripts">
+      <script>scripts\create_explosion.gml</script>
+      <script>scripts\create_part_type_sprite.gml</script>
     </scripts>
-    <script>scripts\create_part_type_sprite.gml</script>
-    <script>scripts\create_explosion.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_controller</object>
@@ -50,20 +44,6 @@
       <object>objects\obj_PaperBox</object>
     </objects>
     <object>objects\obj_circle</object>
-    <objects name="reference objects">
-      <object>objects\ctrl_stage_pregame</object>
-      <object>objects\ctrl_SynapsePlay</object>
-      <object>objects\ctrl_TellJoke</object>
-      <object>objects\ctrl_title</object>
-      <object>objects\ctrl_ui</object>
-      <object>objects\obj_debug1</object>
-      <object>objects\obj_dim</object>
-      <object>objects\obj_joke_thoughts</object>
-      <object>objects\obj_target</object>
-      <object>objects\obj_thought_green</object>
-      <object>objects\obj_thought_red</object>
-      <object>objects\parent_thought</object>
-    </objects>
     <object>objects\obj_wizard</object>
     <objects name="Particles">
       <object>objects\obj_particle_control</object>
