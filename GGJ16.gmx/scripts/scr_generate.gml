@@ -6,7 +6,7 @@ global.gr=ds_list_create();
 //This first block has WORDS, if needed, comment it and uncomment the second one
 ds_list_add(global.gr,"Alohomora","Barada","Cuñao","Dispersio","Eldritch","Ftaghn","Gmail","Hullabaloo","Igitur","Japeto");
 ds_list_add(global.gr,"Klatu","Latha","Mortes","Nicta","Oigan","Pantagruel","Qoras","Ratatata","Shirak","Tomacco");
-ds_list_add(global.gr,"Ulver","Venta","Wilfred","Xena","Yog-Soggoth","Zlad","!@#&%","$$$$","9999","----");
+ds_list_add(global.gr,"Ulver","Venta","Wilfred","Xena","Yog-Soggoth","Zlad","!@&%","$$$$","9999","----");
 
 //This second block has LETTERS, leave only one of them uncommented
 //ds_list_add(gr,"A","B","C","D","E","F","G","H","I","J");

@@ -16,6 +16,14 @@
       <sprite>sprites\spr_smoke_particle</sprite>
       <sprite>sprites\spr_explosion_center</sprite>
     </sprites>
+    <sprites name="Sellos">
+      <sprite>sprites\spr_01</sprite>
+      <sprite>sprites\spr_02</sprite>
+      <sprite>sprites\spr_03</sprite>
+      <sprite>sprites\spr_04</sprite>
+      <sprite>sprites\spr_05</sprite>
+      <sprite>sprites\spr_06</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_GameRoom</background>
@@ -46,6 +54,12 @@
       <object>objects\obj_Position9</object>
       <object>objects\obj_Position10</object>
       <object>objects\obj_PaperBox</object>
+      <object>objects\obj_01</object>
+      <object>objects\obj_02</object>
+      <object>objects\obj_03</object>
+      <object>objects\obj_04</object>
+      <object>objects\obj_05</object>
+      <object>objects\obj_06</object>
     </objects>
     <object>objects\obj_circle</object>
     <object>objects\obj_wizard</object>
@@ -54,8 +68,10 @@
       <object>objects\obj_particles</object>
       <object>objects\obj_explosion_piece</object>
     </objects>
+    <object>objects\obj_title_controller</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_title</room>
     <room>rooms\rm_gameroom</room>
   </rooms>
   <help>

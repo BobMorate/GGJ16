@@ -3,7 +3,7 @@
   <spriteName>PH_PaperBox</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>50</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -80,7 +80,12 @@ keyword[9] = "Japeto"
             <string>is_winner = 0;
 slot = 0;
 word="";
-
+float = false;
+value = random_range(0.02,0.03);
+limit = 0.5;
+current_dir = 1;
+hover = true;
+hovering = 0;
 </string>
           </argument>
         </arguments>
@@ -103,7 +108,104 @@ word="";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 0;
+            <string>//speed = 0;
+float = !float;
+alarm[0] = 15;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if hover = true
+    {
+        if current_dir == 1
+         {
+          if vspeed &lt; limit {vspeed += value} else current_dir = 0;
+         }
+        
+        else
+        
+        if current_dir == 0
+         {
+          if vspeed &gt; -limit {vspeed -= value} else current_dir = 1;
+         }
+     }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//stops the floating animation
+hover = false;
+vspeed = 0;
+
+//Selects the text and assigns it to a slot
+counter +=1;
+switch counter
+    {
+    case 1:
+    instance_create(mouse_x,mouse_y,obj_01); //create number
+    create_explosion(mouse_x, mouse_y);
+    //assign it to slot 1
+    case 2:
+    instance_create(mouse_x,mouse_y,obj_02);
+    create_explosion(mouse_x, mouse_y);
+    //assign it to slot 2
+    case 3:
+    instance_create(mouse_x,mouse_y,obj_03);
+    create_explosion(mouse_x, mouse_y);
+    //assign it to slot 3
+    case 4:
+    instance_create(mouse_x,mouse_y,obj_04);
+    create_explosion(mouse_x, mouse_y);
+    //assign it to slot 4
+    case 5:
+    instance_create(mouse_x,mouse_y,obj_05);
+    create_explosion(mouse_x, mouse_y);
+    //assign it to slot 5
+    case 6: 
+    instance_create(mouse_x,mouse_y,obj_06);
+    create_explosion(mouse_x, mouse_y);
+    //assign it to slot 6
+    //create the "start ritual" button
+    }
+    
+    
+    
 </string>
           </argument>
         </arguments>

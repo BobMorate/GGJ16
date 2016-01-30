@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>100</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,17 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize explosion piece
-speed = random_range(1,5); //change this to change how far the particles can go
-friction = .5; //change this to change the deceleration speed
-direction = random(360);
+            <string>draw_set_font(fnt_parchment);
+draw_set_halign(fa_center);
+
+draw_text_color(640,576,"A game for Global Game Jam 2016#Game Design and frontend coding by Bob Morate (@BobMorate)#Sound effects, music and backend coding by Alex Garcigregor (@Allevoy)#Art by Maggie Valentin (@Maguipu)",c_white,c_white,c_white,c_white,1);
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="9" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,16 +52,7 @@ direction = random(360);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create explosion particles
-part_particles_create(obj_particles.system, x-8+random(16), y-8+random(16), obj_particles.explosion_particle_part,1);
-part_particles_create(obj_particles.system, x-8+random(16), y-8+random(16), obj_particles.smoke_particle_part,1);
-
-//Destroy the particles
-if speed == 0
-    {
-    instance_destroy();
-    }
-    
+            <string>room_goto_next();
 </string>
           </argument>
         </arguments>

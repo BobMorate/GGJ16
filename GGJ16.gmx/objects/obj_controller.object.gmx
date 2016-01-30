@@ -42,6 +42,8 @@ word[10] = "10"*/
 globalvar winners;
 globalvar duds;
 instance_create(864,352,obj_circle);
+globalvar counter;
+counter = 0;
 </string>
           </argument>
         </arguments>
