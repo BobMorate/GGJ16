@@ -40,6 +40,7 @@
       <sprite>sprites\spr_wizard_facepalm</sprite>
       <sprite>sprites\spr_wizard_summon</sprite>
     </sprites>
+    <sprite>sprites\spr_logo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_GameRoom</background>
