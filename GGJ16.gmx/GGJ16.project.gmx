@@ -4,17 +4,27 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_slap</sound>
+    <sound>sound\snd_ding1</sound>
+    <sound>sound\snd_ding2</sound>
+    <sound>sound\snd_ding3</sound>
+    <sound>sound\snd_ding4</sound>
+    <sound>sound\snd_ding5</sound>
+    <sound>sound\snd_ding6</sound>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\PH_PaperBox</sprite>
+    <sprite>sprites\spr_PaperBox</sprite>
+    <sprite>sprites\spr_reset</sprite>
     <sprite>sprites\PH_Paper_Positions</sprite>
     <sprite>sprites\spr_circulo</sprite>
-    <sprite>sprites\sprite3</sprite>
-    <sprite>sprites\spr_wizard</sprite>
+    <sprite>sprites\spr_StartRitualButton</sprite>
     <sprites name="Particles">
       <sprite>sprites\spr_burst_particle</sprite>
+      <sprite>sprites\spr_eyespark_particle</sprite>
       <sprite>sprites\spr_smoke_particle</sprite>
       <sprite>sprites\spr_explosion_center</sprite>
+      <sprite>sprites\spr_eyespark_center</sprite>
     </sprites>
     <sprites name="Sellos">
       <sprite>sprites\spr_01</sprite>
@@ -23,6 +33,12 @@
       <sprite>sprites\spr_04</sprite>
       <sprite>sprites\spr_05</sprite>
       <sprite>sprites\spr_06</sprite>
+    </sprites>
+    <sprites name="Wizard">
+      <sprite>sprites\spr_wizard_idle</sprite>
+      <sprite>sprites\spr_wizard_left</sprite>
+      <sprite>sprites\spr_wizard_facepalm</sprite>
+      <sprite>sprites\spr_wizard_summon</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -33,6 +49,7 @@
     <script>scripts\scr_generate.gml</script>
     <scripts name="Particle Scripts">
       <script>scripts\create_explosion.gml</script>
+      <script>scripts\create_eye_spark.gml</script>
       <script>scripts\create_part_type_sprite.gml</script>
     </scripts>
     <script>scripts\formatWordLists.gml</script>
@@ -43,16 +60,6 @@
   <objects name="objects">
     <object>objects\obj_controller</object>
     <objects name="Paper_Positions">
-      <object>objects\obj_Position1</object>
-      <object>objects\obj_Position2</object>
-      <object>objects\obj_Position3</object>
-      <object>objects\obj_Position4</object>
-      <object>objects\obj_position5</object>
-      <object>objects\obj_Position6</object>
-      <object>objects\obj_Position7</object>
-      <object>objects\obj_Position8</object>
-      <object>objects\obj_Position9</object>
-      <object>objects\obj_Position10</object>
       <object>objects\obj_PaperBox</object>
       <object>objects\obj_01</object>
       <object>objects\obj_02</object>
@@ -60,15 +67,19 @@
       <object>objects\obj_04</object>
       <object>objects\obj_05</object>
       <object>objects\obj_06</object>
+      <object>objects\obj_reset</object>
     </objects>
     <object>objects\obj_circle</object>
-    <object>objects\obj_wizard</object>
+    <object>objects\obj_wizard_idle</object>
     <objects name="Particles">
       <object>objects\obj_particle_control</object>
       <object>objects\obj_particles</object>
       <object>objects\obj_explosion_piece</object>
+      <object>objects\obj_eyespark_piece</object>
     </objects>
     <object>objects\obj_title_controller</object>
+    <object>objects\obj_Button_StartRit</object>
+    <object>objects\obj_wizard_casting</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title</room>

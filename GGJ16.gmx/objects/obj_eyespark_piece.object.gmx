@@ -25,24 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize the particle system
-system = part_system_create();
-color_hue = 0;
-//Create 3 particles (explosion yellow sparks)
-explosion_center_part = create_part_type_sprite(spr_explosion_center, true, 30, 30, .6, .8, -001);
-explosion_particle_part = create_part_type_sprite(spr_burst_particle, true, 15, 20, .5, 1, -.01);
-smoke_particle_part = create_part_type_sprite(spr_smoke_particle, true, 15, 15, .5, .1, -.01);
-
-//Create 3 more particles (eye spark summoning red sparks)
-eyespark_center_part = create_part_type_sprite(spr_eyespark_center, true, 30, 30, .6, .8, -001);
-eyespark_particle_part = create_part_type_sprite(spr_eyespark_particle, true, 15, 20, .5, 1, -.01);
+            <string>///Initialize explosion piece
+speed = random_range(1,5); //change this to change how far the particles can go
+friction = .5; //change this to change the deceleration speed
+direction = random(360);
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="3">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -59,12 +52,15 @@ eyespark_particle_part = create_part_type_sprite(spr_eyespark_particle, true, 15
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy the particle system
-part_system_destroy(system);
-//Destroy particle types
-part_type_destroy(explosion_center_part);
-part_type_destroy(explosion_particle_part);
-part_type_destroy(smoke_particle_part);
+            <string>///Create explosion particles
+part_particles_create(obj_particles.system, x-8+random(16), y-8+random(16), obj_particles.eyespark_particle_part,1);
+
+//Destroy the particles
+if speed == 0
+    {
+    instance_destroy();
+    }
+    
 </string>
           </argument>
         </arguments>
