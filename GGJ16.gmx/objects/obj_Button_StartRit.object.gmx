@@ -93,7 +93,7 @@ if hover = true
 
 show_debug_message("");
 show_debug_message("SELECTION is " + formatWordLists(global.selection));
-
+show_debug_message("counter  is " + string(counter));
 //Mastermind comparation: 
 //checks if word exists within the ritual, and "colours" it yellow
 

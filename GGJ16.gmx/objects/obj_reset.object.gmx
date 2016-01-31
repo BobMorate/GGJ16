@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch counter
+            <string>show_debug_message("counter " + string(counter));
+switch counter
         {
         case 1:
             with obj_01
