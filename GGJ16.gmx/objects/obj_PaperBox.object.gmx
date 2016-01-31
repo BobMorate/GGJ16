@@ -220,6 +220,7 @@ if hover == true
             instance_create(1000,600,obj_Button_StartRit); //create the "start ritual" button
             break
         }
+        global.selection[| counter]=word;
         eligible = false; //makes the button unavailable for selection again
     }
         

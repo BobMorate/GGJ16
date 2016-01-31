@@ -18,11 +18,14 @@ ds_list_add(global.gr,"Ulver","Venta","Wilfred","Xena","Yog-Soggoth","Zlad","!@&
 global.rit=ds_list_create();
 global.pool=ds_list_create();
 
+global.selection=ds_list_create();
 
+global.feedback=ds_list_create();
+
+global.lives=5;
 
 //Start random number generator - comment "randomize()" line to force the same seed, useful for debugging
 randomize();
-
 
 
 //Take 6 random words from the Grimoire into the Ritual, without repetitions

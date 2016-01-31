@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//state = wait;
+            <string>global.ritual_started=false;
+
+
+//state = wait;
 /*
 name = "paperbox"
 word[0] = "Green"
@@ -68,7 +71,7 @@ counter = 0;
             <kind>1</kind>
             <string>if counter &gt; 0 and !instance_exists(obj_reset)
     {
-    instance_create(200,200,obj_reset)
+    instance_create(200,60,obj_reset)
     }
     
 </string>
@@ -93,138 +96,7 @@ counter = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Initialize the Grimoire (dictionary of all possible words)
-gr=ds_list_create();
-
-//This first block has WORDS, if needed, comment it and uncomment the second one
-ds_list_add(gr,"Alohomora","Barada","Cuñao","Dispersio","Eldritch","Ftaghn","Gmail","Hullabaloo","Igitur","Japeto");
-ds_list_add(gr,"Klatu","Latha","Mortes","Nicta","Oigan","Pantagruel","Qoras","Ratatata","Shirak","Tomacco");
-ds_list_add(gr,"Ulver","Venta","Wilfred","Xena","Yog-Soggoth","Zlad","!@#&amp;%","$$$$","9999","----");
-
-//This second block has LETTERS, leave only one of them uncommented
-//ds_list_add(gr,"A","B","C","D","E","F","G","H","I","J");
-//ds_list_add(gr,"K","L","M","N","O","P","Q","R","S","T");
-//ds_list_add(gr,"U","V","W","X","Y","Z","1","2","3","4");
-
-
-//Initialize the "ritual" (phrase to be guessed) and "pool" (list of words elligible)
-rit=ds_list_create();
-pool=ds_list_create();
-
-
-
-
-
-
-
-
-//  AQUÍ EMPIEZA EL CÓDIGO QUE FUSILÉ PARA QUE SALIERA UN BOTÓN (O DOS). 
-//       Cuando sepamos cómo hacer que nos obedezca GMS cuando hagamos clic por todas partes, reubicamos las lógicas
-
-
-/*
-    We will be using the following functions:
-        point_in_rectangle(px,py,x1,y1,x2,y2) This function will check if pointx and pointy are inside the given area.
-        window_mouse_get_x() This function will get the x value of the mouse relative to the position in the window, rather than the room.
-        window_mouse_get_y() This function, like window_mouse_get_x(), will get the y value of the mouse relative to the position in the window, rather than the room.
-        
-        The other functions are all basic functions that most of you have heard of &amp; used many times so I will just explain them within the code.
-
-*/
-
-
-//First button!
-if point_in_rectangle(window_mouse_get_x(),window_mouse_get_y(),10,10,300,60) &amp;&amp; hovering = 0 //Here we are checking if the mouse's position in the window is the same as the boundaries for our button &amp; if we are not hovering over any buttons
-{
-    draw_set_alpha(0.8); //If the mouse is in the the area of our button then we set the opacity to 0.8
-    hovering = 1; //Set the hovering to 1 since we are hovering over the first button
-};
-else //If the mouse is not inside the point
-{
-    draw_set_alpha(0.5); //Set the alpha back to normal
-};
-
-draw_set_color(c_gray); //Set the color to gray for our button
-draw_rectangle(10,10,300,60,false); //Draw our button
-draw_set_color(c_black); //Set the color to black for our text
-draw_set_halign(fa_center); //Center our text (horizontal)
-draw_set_valign(fa_center); //Center our text (verticle)
-draw_text(155,35,"Generar Ritual y Pool"); //Draw our button text
-
-
-//Second button!
-if point_in_rectangle(window_mouse_get_x(),window_mouse_get_y(),10,100,300,150) //Here we are checking if the mouse's position in the window is the same as the boundaries for our button
-{
-    draw_set_alpha(0.8); //If the mouse is in the the area of our button then we set the opacity to 0.8
-    hovering = 2; //Set the hovering to 2 since we are hovering over the second button
-};
-else //If the mouse is not inside the point
-{
-    draw_set_alpha(0.5); //Set the alpha back to normal
-};
-
-draw_set_color(c_gray); //Set the color to gray for our button
-draw_rectangle(10,100,300,150,false); //Draw our button
-draw_set_color(c_black); //Set the color to black for our text
-draw_set_halign(fa_center); //Center our text (horizontal)
-draw_set_valign(fa_center); //Center our text (verticle)
-draw_text(155,125,"(sin función aún)"); //Draw our button text
-
-
-//Now we clean up our drawing
-draw_set_alpha(1); //Reset the alpha
-draw_set_color(c_white); //Reset the color
-draw_set_halign(fa_left); //Reset the horizontal align
-
-//We check if the mouse has been pressed on any of the buttons
-if mouse_check_button_pressed(mb_left) &amp;&amp; hovering &gt; 0 //If the mouse button is pressed &amp; we are hovering over a button
-{
-    switch hovering //We use a switch statement here instead of a huge list of "if" statements. The switch statement just chooses the appropriate option based on the value of the variable, in our case, "hovering".
-    {
-        // ESTO DE DENTRO ES MI LÓGICA, QUE COMENTÉ EN INGLÉS ANTES
-        case 1: {
-          
-            //Start random number generator - comment "randomize()" line to force the same seed, useful for debugging
-            randomize();
-            var n=0;
-
-            //Take 6 random words from the Grimoire into the Ritual
-            for (var i = 0; i &lt; 6; i += 1){
-                rit[| i]=gr[| irandom(29)];
-                pool[| i]=rit[| i];
-            }
-            
-            //Take another 4 words for the pool
-            for (var i = 6; i &lt; 10; i += 1){
-                pool[| i]=gr[| irandom(29)];
-            }
-            
-            //Shuffle both ds_lists for random Ritual order and random (and different) Pool order
-            show_debug_message("Before shuffling ritual is "+string(rit[| 0]+" "+string(rit[| 1])+" "+string(rit[| 2])+" "+string(rit[| 3])+" "+string(rit[| 4])+" "+string(rit[| 5])));
-            show_debug_message("Before shuffling pool is "+string(pool[| 0])+" "+string(pool[| 1])+" "+string(pool[| 2])+" "+string(pool[| 3])
-                +" "+string(pool[| 4])+" "+string(pool[| 5])+" "+string(pool[| 6]+" "+string(pool[| 7])+" "+string(pool[| 8])+" "+string(pool[| 9])));
-                
-            ds_list_shuffle(rit);
-            ds_list_shuffle(pool);
-
-            show_debug_message("");
-            show_debug_message("AFTER shuffling ritual is "+string(rit[| 0]+" "+string(rit[| 1])+" "+string(rit[| 2])+" "+string(rit[| 3])+" "+string(rit[| 4])+" "+string(rit[| 5])));
-            show_debug_message("AFTER shuffling pool is "+string(pool[| 0])+" "+string(pool[| 1])+" "+string(pool[| 2])+" "+string(pool[| 3])
-                +" "+string(pool[| 4])+" "+string(pool[| 5])+" "+string(pool[| 6]+" "+string(pool[| 7])+" "+string(pool[| 8])+" "+string(pool[| 9])));
-            show_debug_message("");
-            
-        } break; //If hovering = 1 then we show the message. Don't forget to have your break after a case otherwise the case can never change and it will be an infinite loop!
-        
-        case 2: {
-            show_debug_message("SIN USAR DE MOMENTO");
-            show_debug_message("");
-        } break; //If hovering = 2
-    };
-};
-
-//Lastly we set hovering back to 0
-hovering = 0;
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -262,7 +134,9 @@ hovering = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_generate();
+            <string>if (!global.ritual_started) scr_generate();
+global.ritual_started=true;
+
 
 
 </string>

@@ -32,38 +32,57 @@
             instance_destroy();
         case 2:
             with obj_01
+            instance_destroy();
             with obj_02
             instance_destroy();
         case 3:
             with obj_01
+            instance_destroy();
             with obj_02
+            instance_destroy();
             with obj_03
             instance_destroy();
         case 4:
             with obj_01
+            instance_destroy();
             with obj_02
+            instance_destroy();
             with obj_03
+            instance_destroy();
             with obj_04
             instance_destroy();
         case 5:
            with obj_01
+           instance_destroy();
            with obj_02
+           instance_destroy();
            with obj_03
+           instance_destroy();
            with obj_04
+           instance_destroy();
            with obj_05
            instance_destroy();
         case 6: 
            with obj_01
+           instance_destroy();
            with obj_02
+           instance_destroy();
            with obj_03
+           instance_destroy();
            with obj_04
+           instance_destroy();
            with obj_05
+           instance_destroy();
            with obj_06
            instance_destroy();
         }    
 counter = 0;       
 obj_PaperBox.eligible = true;
 obj_PaperBox.vspeed = 0.1;
+
+with obj_Button_StartRit instance_destroy();
+with obj_reset instance_destroy();
+
 </string>
           </argument>
         </arguments>
