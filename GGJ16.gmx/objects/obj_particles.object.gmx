@@ -33,9 +33,17 @@ explosion_center_part = create_part_type_sprite(spr_explosion_center, true, 30, 
 explosion_particle_part = create_part_type_sprite(spr_burst_particle, true, 15, 20, .5, 1, -.01);
 smoke_particle_part = create_part_type_sprite(spr_smoke_particle, true, 15, 15, .5, .1, -.01);
 
-//Create 3 more particles (eye spark summoning red sparks)
-eyespark_center_part = create_part_type_sprite(spr_eyespark_center, true, 30, 30, .6, .8, -001);
-eyespark_particle_part = create_part_type_sprite(spr_eyespark_particle, true, 15, 20, .5, 1, -.01);
+//Create 3 more particles (green fireworks)
+fireworks_center_part = create_part_type_sprite(spr_fireworks_center, true, 30, 30, .6, .8, -001);
+fireworks_particle_part = create_part_type_sprite(spr_fireworks_particle, true, 15, 20, .5, 1, -.01);
+
+//Create 3 more particles (red fireworks)
+red_fireworks_center_part = create_part_type_sprite(spr_red_fireworks_center, true, 30, 30, .6, .8, -001);
+red_fireworks_particle_part = create_part_type_sprite(spr_red_fireworks_particle, true, 15, 20, .5, 1, -.01);
+
+//Create 3 more particles (yellow fireworks)
+yellow_fireworks_center_part = create_part_type_sprite(spr_explosion_center, true, 30, 30, .6, .8, -001);
+yellow_fireworks_particle_part = create_part_type_sprite(spr_burst_particle, true, 15, 20, .5, 1, -.01);
 
 </string>
           </argument>

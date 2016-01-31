@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>150</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,10 +27,13 @@
             <kind>1</kind>
             <string>color_hue = 0;
 pulse = true;
+ending = false;
 alarm[0] = 90;
 image_xscale = 0.8;
 image_yscale = 0.8;
 image_alpha = 0.5;
+globalvar circle_rotation_speed;
+circle_rotation_speed = 0.1;
 </string>
           </argument>
         </arguments>
@@ -79,7 +82,7 @@ alarm[0] = 90
             <kind>1</kind>
             <string>var trans_alpha = 0;
 
-image_angle+=0.1
+image_angle+=circle_rotation_speed
 image_blend = make_colour_hsv(color_hue,100,250);
 color_hue +=0.3;
 
@@ -98,12 +101,17 @@ if pulse = false
     {
     image_xscale -=.001;
     image_yscale -=.001;
-    image_alpha -=0.005
+    image_alpha -=0.005;
     }
-if image_alpha &lt;=0.3 
+if image_alpha &lt;=0.3  &amp;&amp; ending = false
     {
     image_alpha =0.3
     }    
+if circle_rotation_speed &gt;=100 
+    {
+    ending = true;
+    pulse = false;
+    }
 </string>
           </argument>
         </arguments>

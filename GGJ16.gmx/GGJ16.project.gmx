@@ -22,10 +22,12 @@
     <sprite>sprites\spr_StartRitualButton</sprite>
     <sprites name="Particles">
       <sprite>sprites\spr_burst_particle</sprite>
-      <sprite>sprites\spr_eyespark_particle</sprite>
+      <sprite>sprites\spr_fireworks_particle</sprite>
+      <sprite>sprites\spr_red_fireworks_particle</sprite>
       <sprite>sprites\spr_smoke_particle</sprite>
       <sprite>sprites\spr_explosion_center</sprite>
-      <sprite>sprites\spr_eyespark_center</sprite>
+      <sprite>sprites\spr_fireworks_center</sprite>
+      <sprite>sprites\spr_red_fireworks_center</sprite>
     </sprites>
     <sprites name="Sellos">
       <sprite>sprites\spr_01</sprite>
@@ -53,7 +55,9 @@
     <script>scripts\scr_generate.gml</script>
     <scripts name="Particle Scripts">
       <script>scripts\create_explosion.gml</script>
-      <script>scripts\create_eye_spark.gml</script>
+      <script>scripts\create_firework_spark.gml</script>
+      <script>scripts\create_firework_spark_red.gml</script>
+      <script>scripts\create_firework_spark_yellow.gml</script>
       <script>scripts\create_part_type_sprite.gml</script>
     </scripts>
     <script>scripts\formatWordLists.gml</script>
@@ -62,7 +66,25 @@
     <font>fonts\fnt_parchment</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_controller</object>
+    <objects name="Wizard">
+      <object>objects\obj_wizard_idle</object>
+      <object>objects\obj_wizard_casting</object>
+      <object>objects\obj_wizard_surprised</object>
+    </objects>
+    <objects name="Controllers">
+      <object>objects\obj_controller</object>
+      <object>objects\obj_title_controller</object>
+      <object>objects\obj_victorycontroller</object>
+    </objects>
+    <objects name="Particles">
+      <object>objects\obj_particle_control</object>
+      <object>objects\obj_particles</object>
+      <object>objects\obj_explosion_piece</object>
+      <object>objects\obj_fireworks_piece</object>
+      <object>objects\obj_red_fireworks_piece</object>
+      <object>objects\obj_yellow_fireworks_piece</object>
+      <object>objects\obj_victoryFireworks</object>
+    </objects>
     <objects name="Paper_Positions">
       <object>objects\obj_PaperBox</object>
       <object>objects\obj_01</object>
@@ -75,22 +97,15 @@
       <object>objects\obj_nextround</object>
     </objects>
     <object>objects\obj_circle</object>
-    <object>objects\obj_wizard_idle</object>
-    <objects name="Particles">
-      <object>objects\obj_particle_control</object>
-      <object>objects\obj_particles</object>
-      <object>objects\obj_explosion_piece</object>
-      <object>objects\obj_eyespark_piece</object>
-    </objects>
-    <object>objects\obj_title_controller</object>
     <object>objects\obj_Button_StartRit</object>
-    <object>objects\obj_wizard_casting</object>
     <object>objects\obj_lives</object>
     <object>objects\obj_diablo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title</room>
     <room>rooms\rm_gameroom</room>
+    <room>rooms\rm_victory</room>
+    <room>rooms\rm_tests</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
