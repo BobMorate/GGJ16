@@ -101,13 +101,15 @@ if clickable = true
         //checks if word exists within the ritual, and "colours" it yellow
         
         for (var i = 0; i&lt;6; i++){
+            var pos = ds_list_find_index(global.pool, global.selection[| i]);
             if (ds_list_find_index(global.rit, global.selection[| i])!=-1) {
                 global.feedback[| i]= 1; 
-                //make i "yellow" but not visibly yet      
+                global.scrolls[| pos].image_index=2;      
             }
             else {
                 //make it "red" or do nothing?
                 global.feedback[| i]= 0; 
+                global.scrolls[| pos].image_index=3;
             }
         }
         
@@ -115,9 +117,11 @@ if clickable = true
         //checks if existing words are in their correct positions and colours them "green"
        
             for (var i = 0; i&lt;6; i++){
+                var pos = ds_list_find_index(global.pool, global.selection[| i]);
                 if (global.selection[| i]==global.rit[| i]) {
                     //make i "green" but not visibly yet       
                     global.feedback[| i]= 2; 
+                    global.scrolls[| pos].image_index=1;
                 }
             }
         

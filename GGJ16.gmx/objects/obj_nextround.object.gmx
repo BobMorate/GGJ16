@@ -84,6 +84,10 @@ obj_PaperBox.vspeed = 0.1;
 with obj_Button_StartRit instance_destroy();
 with obj_nextround instance_destroy();
 
+for (var i = 0; i&lt; 10; i++){
+    global.scrolls[| i].image_index=0;
+}
+
 </string>
           </argument>
         </arguments>
