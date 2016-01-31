@@ -85,6 +85,7 @@ value = random_range(0.02,0.03);
 limit = 0.5;
 current_dir = 1;
 hover = true;
+image_speed = 0;
 </string>
           </argument>
         </arguments>

@@ -82,7 +82,7 @@ obj_PaperBox.eligible = true;
 obj_PaperBox.vspeed = 0.1;
 
 with obj_Button_StartRit instance_destroy();
-with obj_reset instance_destroy();
+with obj_nextround instance_destroy();
 
 </string>
           </argument>
@@ -108,7 +108,7 @@ with obj_reset instance_destroy();
             <kind>1</kind>
             <string>draw_self();
 draw_set_halign(fa_center)
-draw_text_color(x,y,"Start Over",c_black,c_black,c_black,c_black,1);
+draw_text_color(x,y,"Try again",c_black,c_black,c_black,c_black,1);
 draw_set_font(fnt_parchment);
 </string>
           </argument>

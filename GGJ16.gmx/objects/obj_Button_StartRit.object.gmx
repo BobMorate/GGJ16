@@ -25,10 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>limit = 0.5;
+            <string>clickable = true;
+limit = 0.5;
 value = random_range(0.02,0.03);
 current_dir = 1;
 hover = true;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -90,65 +92,105 @@ if hover = true
           <argument>
             <kind>1</kind>
             <string>//Compare selection to ritual
-
-show_debug_message("");
-show_debug_message("SELECTION is " + formatWordLists(global.selection));
-show_debug_message("counter  is " + string(counter));
-//Mastermind comparation: 
-//checks if word exists within the ritual, and "colours" it yellow
-
-for (var i = 0; i&lt;6; i++){
-    if (ds_list_find_index(global.rit, global.selection[| i])!=-1) {
-        global.feedback[| i]= 1; 
-        //make i "yellow" but not visibly yet      
+if clickable = true
+    {
+        show_debug_message("");
+        show_debug_message("SELECTION is " + formatWordLists(global.selection));
+        show_debug_message("counter  is " + string(counter));
+        //Mastermind comparation: 
+        //checks if word exists within the ritual, and "colours" it yellow
+        
+        for (var i = 0; i&lt;6; i++){
+            if (ds_list_find_index(global.rit, global.selection[| i])!=-1) {
+                global.feedback[| i]= 1; 
+                //make i "yellow" but not visibly yet      
+            }
+            else {
+                //make it "red" or do nothing?
+                global.feedback[| i]= 0; 
+            }
+        }
+        
+        
+        //checks if existing words are in their correct positions and colours them "green"
+       
+            for (var i = 0; i&lt;6; i++){
+                if (global.selection[| i]==global.rit[| i]) {
+                    //make i "green" but not visibly yet       
+                    global.feedback[| i]= 2; 
+                }
+            }
+        
+        
+        //decreases number of "lives" and checks game over condition
+        lives-=1;
+        if (lives ==0){
+            //game over condition met, display/transition to game over room
+            show_debug_message("");
+            show_debug_message("Game Over! :( ");
+            audio_stop_all();
+            room_restart();
+        }
+        
+        
+        //displays feedback somehow
+        
+        show_debug_message("SELECTION is " + formatWordLists(global.feedback));
+        show_debug_message("");
+        show_debug_message("Remaining tries: " + string(global.lives));
+        
+        
+        
+        //check victory condition and display/transition to victory room
+        var victory=0;
+        for (var i = 0; i&lt;6; i++){
+            if (global.feedback[| i]==2) {
+                victory++;
+            }
+        }
+        if (victory==6) {
+            show_debug_message("");
+            show_debug_message("VICTORY!!!");
+            //reset game variables here
+            audio_stop_all();
+            room_restart();
+        }
+        
+        clickable = false;
+        with obj_reset
+            {
+            instance_destroy()
+            }
+        instance_create(200,60,obj_nextround);
     }
-    else {
-        //make it "red" or do nothing?
-        global.feedback[| i]= 0; 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+if clickable == false
+    {
+    image_index = 1;
     }
-}
-
-
-//checks if existing words are in their correct positions and colours them "green"
-
-for (var i = 0; i&lt;6; i++){
-    if (global.selection[| i]==global.rit[| i]) {
-        //make i "green" but not visibly yet       
-        global.feedback[| i]= 2; 
-    }
-}
-
-//decreases number of "lives" and checks game over condition
-global.lives-=1;
-if (global.lives ==0){
-    //game over condition met, display/transition to game over room
-    show_debug_message("");
-    show_debug_message("Game Over! :( ");
-    room_restart();
-}
-
-
-//displays feedback somehow
-
-show_debug_message("SELECTION is " + formatWordLists(global.feedback));
-show_debug_message("");
-show_debug_message("Remaining tries: " + string(global.lives));
-
-
-
-//check victory condition and display/transition to victory room
-var victory=0;
-for (var i = 0; i&lt;6; i++){
-    if (global.feedback[| i]==2) {
-        victory++;
-    }
-}
-if (victory==6) {
-    show_debug_message("");
-    show_debug_message("VICTORY!!!");
-    //reset game variables here
-    room_restart();
-}
+    
 </string>
           </argument>
         </arguments>

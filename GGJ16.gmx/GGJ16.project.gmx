@@ -72,6 +72,7 @@
       <object>objects\obj_05</object>
       <object>objects\obj_06</object>
       <object>objects\obj_reset</object>
+      <object>objects\obj_nextround</object>
     </objects>
     <object>objects\obj_circle</object>
     <object>objects\obj_wizard_idle</object>
