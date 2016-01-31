@@ -80,6 +80,7 @@ switch counter
 counter = 0;       
 obj_PaperBox.eligible = true;
 obj_PaperBox.vspeed = 0.1;
+audio_play_sound(snd_whoosh,1,false);
 
 with obj_Button_StartRit instance_destroy();
 with obj_reset instance_destroy();

@@ -25,30 +25,56 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.ritual_started=false;
-lives = 5;
-audio_play_sound(snd_gameloopmusic,1,true);
-tutorialcount = 0;
-//state = wait;
-/*
-name = "paperbox"
-word[0] = "Green"
-word[1] = "Red"
-word[2] = "Blue"
-word[3] = "Yellow"
-word[4] = "Brown"
-word[5] = "Magenta"
-word[6] = "Sixth"
-word[7] = "Seventh"
-word[8] = "8"
-word[9] = "9"
-word[10] = "10"*/
-globalvar winners;
-globalvar duds;
-instance_create(864,352,obj_circle);
-globalvar counter;
-counter = 0;
-alphacheck = true;
+            <string>alarm[0] = 90;
+alarm[1] = 180;
+with obj_circle ending = true;
+showtext = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>showtext = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(822,274,obj_toobad)
 </string>
           </argument>
         </arguments>
@@ -71,46 +97,8 @@ alphacheck = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if counter &gt; 0 and !instance_exists(obj_reset)
-    {
-    instance_create(200,60,obj_reset)
-    }
-
-//FOR TESTING PURPOSES (lives display) delete this once finished!       
-/*
-if (keyboard_check_pressed(vk_up))
-    {
-    lives++
-    }
-
-if (keyboard_check_pressed(vk_down))
-    {
-    lives--
-    }    
-*/
+            <string>with obj_circle image_alpha -=0.1;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -132,59 +120,11 @@ if (keyboard_check_pressed(vk_down))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alphacheck = true
+            <string>if showtext = true
     {
-    switch tutorialcount
-        {
-            case 0:
-            {
-            draw_text_color(832,288,"The summoner's apprentice has been given his first trial:#By searching on an ancient book, he must learn to#summon a helper demon.##Unfortunately, the book is written in a long-forgotten#language, and the apprentice has no idea about#how to formulate the spell###(Press SPACE to continue...)",c_white,c_white,c_white,c_white,1);
-            break
-            }
-            
-            case 1:
-            {
-            draw_text_color(832,208,"He suddenly remembers his master's teachings:#''Arcane arts work both ways. #Your helper demon will try to reach out to you too.''##Words marked in green mean that they are in the correct place.##Yellow ones mean that the word is in the spell, #but not in that place.##Grey means that the word is not used on the spell at all.##(Press SPACE to continue)",c_white,c_white,c_white,c_white,1);
-            break
-            }
-            case 2:
-            {
-            draw_text_color(832,288,"You only have five ritual candles to solve this riddle.##There is no time limit, so take your time.##Use your wits to find out the right combination!####(Press SPACE to start)",c_white,c_white,c_white,c_white,1);
-            break
-            }
-      }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if tutorialcount = 2
-    {
-    if (!global.ritual_started) scr_generate();
-    global.ritual_started=true;
-    alphacheck = false;
+    draw_text_color(640,526,"A for effort, though#Why not try again?#Press R to restart",c_white,c_white,c_white,c_white,1);
     }
-else tutorialcount +=1;
-
-
+    
 </string>
           </argument>
         </arguments>

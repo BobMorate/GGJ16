@@ -4,10 +4,12 @@
 global.gr=ds_list_create();
 
 //This first block has WORDS, if needed, comment it and uncomment the second one
-ds_list_add(global.gr,"Alohomora","Barada","Cuñao","Dispersio","Eldritch","Ftaghn","Gmail","Hullabaloo","Igitur","Japeto");
-ds_list_add(global.gr,"Klatu","Latha","Mortes","Nicta","Oigan","Pantagruel","Qoras","Ratatata","Shirak","Tomacco");
-ds_list_add(global.gr,"Ulver","Venta","Wilfred","Xena","Yog-Soggoth","Zlad","!@&%","$$$$","9999","----");
-
+ds_list_add(global.gr,"Alohomora","AlPacino","Alakazam","Avogadro","Barada","Belmont","Bakayanai","Cuniao","Caligula","Dispersio");
+ds_list_add(global.gr,"Dendrobius","Dalamudis","Eldritch","Expecta","Ensabanur","Ftaghn","Flaps","Fishermans","Gmail","Garcigregor");
+ds_list_add(global.gr,"Ganian","Hullaballoo","Horrendus","Hocus","Igitur","Ifrit","Inceptus","Ignotus","Japeto","Klatu");
+ds_list_add(global.gr,"Latha","Levamentum","Liberatio","Mortes","Morate","Maggie","Nicta","Nocturne","Oigan","Pantagruel");
+ds_list_add(global.gr,"Pandemonium","Qoras","Ratatata","Rumpupumpum","Shirak","Sriracha","Tomacco","Tacata","Ulver","Ultimatus");
+ds_list_add(global.gr,"Venta","Wilfred","Xena","Xelerad","Yog-Soggoth","YOLO","Zlad","!@$%*","Knorring","Moist");
 //This second block has LETTERS, leave only one of them uncommented
 //ds_list_add(gr,"A","B","C","D","E","F","G","H","I","J");
 //ds_list_add(gr,"K","L","M","N","O","P","Q","R","S","T");
@@ -35,14 +37,14 @@ for (var i = 0; i < 6; i += 1){
     var candidate = "";
     
     if(ds_list_empty(global.rit)){
-        global.rit[| i]=global.gr[| irandom(29)];  
+        global.rit[| i]=global.gr[| irandom(59)];  
         global.pool[| i]=global.rit[| i];
         show_debug_message("0  candidate = " + global.pool[| i]);
         continue;
     }  
     else {
         do {
-            candidate = global.gr[| irandom(29)];
+            candidate = global.gr[| irandom(59)];
             show_debug_message(string(i) + "  candidate = " + candidate);
         } until (ds_list_find_index(global.rit, candidate)==-1);
         
@@ -58,7 +60,7 @@ for (var i = 6; i < 10; i += 1){
     var candidate = "";
     
     do {
-        candidate = global.gr[| irandom(29)];
+        candidate = global.gr[| irandom(59)];
         show_debug_message(string(i) + "  candidate = " + candidate);
     } until (ds_list_find_index(global.pool, candidate)==-1);
        

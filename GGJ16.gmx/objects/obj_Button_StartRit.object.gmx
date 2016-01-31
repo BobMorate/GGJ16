@@ -128,12 +128,18 @@ if clickable = true
         
         //decreases number of "lives" and checks game over condition
         lives-=1;
+        instance_create(obj_wizard_idle.x, obj_wizard_idle.y, obj_wizard_facepalm);
+        instance_create(254, 430, obj_facepalm_motion);
+        with obj_wizard_idle
+            {
+            instance_destroy();
+            }
         if (lives ==0){
             //game over condition met, display/transition to game over room
             show_debug_message("");
             show_debug_message("Game Over! :( ");
             audio_stop_all();
-            room_restart();
+            room_goto(rm_gameover);
         }
         
         
@@ -157,7 +163,7 @@ if clickable = true
             show_debug_message("VICTORY!!!");
             //reset game variables here
             audio_stop_all();
-            room_restart();
+            room_goto(rm_victory);
         }
         
         clickable = false;

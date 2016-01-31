@@ -80,7 +80,9 @@ switch counter
 counter = 0;       
 obj_PaperBox.eligible = true;
 obj_PaperBox.vspeed = 0.1;
-
+audio_play_sound(snd_whoosh,1,false);
+instance_create (obj_wizard_facepalm.x,obj_wizard_facepalm.y,obj_wizard_idle);
+with obj_wizard_facepalm instance_destroy();
 with obj_Button_StartRit instance_destroy();
 with obj_nextround instance_destroy();
 
