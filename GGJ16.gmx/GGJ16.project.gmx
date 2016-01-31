@@ -12,6 +12,7 @@
     <sound>sound\snd_ding4</sound>
     <sound>sound\snd_ding5</sound>
     <sound>sound\snd_ding6</sound>
+    <sound>sound\snd_gameloopmusic</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_PaperBox</sprite>
@@ -41,6 +42,8 @@
       <sprite>sprites\spr_wizard_summon</sprite>
     </sprites>
     <sprite>sprites\spr_logo</sprite>
+    <sprite>sprites\spr_candle</sprite>
+    <sprite>sprites\spr_diablo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_GameRoom</background>
@@ -81,6 +84,8 @@
     <object>objects\obj_title_controller</object>
     <object>objects\obj_Button_StartRit</object>
     <object>objects\obj_wizard_casting</object>
+    <object>objects\obj_lives</object>
+    <object>objects\obj_diablo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title</room>

@@ -248,10 +248,10 @@ if hover == true
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_set_halign(fa_center)
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
 draw_text_color(x,y,word,c_black,c_black,c_black,c_black,1);
 
-draw_set_halign(fa_center);
 draw_set_font(fnt_parchment);
 </string>
           </argument>
