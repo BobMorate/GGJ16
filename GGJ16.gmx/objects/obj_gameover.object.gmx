@@ -122,7 +122,7 @@ showtext = false;
             <kind>1</kind>
             <string>if showtext = true
     {
-    draw_text_color(640,526,"A for effort, though#Why not try again?#Press R to restart",c_white,c_white,c_white,c_white,1);
+    draw_text_color(640,526,"A worthy effort, though#Why not try again?#Press R to restart",c_white,c_white,c_white,c_white,1);
     }
     
 </string>
