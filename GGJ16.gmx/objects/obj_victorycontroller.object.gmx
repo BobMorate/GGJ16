@@ -28,6 +28,7 @@
             <string>alarm[0] = 330
 message = false;
 audio_play_sound(snd_portalspin,1,false);
+audio_play_sound(snd_mystery,1,false);
 alarm[1] = 600;  
 
 </string>

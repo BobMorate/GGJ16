@@ -17,6 +17,7 @@
     <sound>sound\snd_gameover</sound>
     <sound>sound\snd_whoosh</sound>
     <sound>sound\snd_portalspin</sound>
+    <sound>sound\snd_mystery</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_PaperBox</sprite>

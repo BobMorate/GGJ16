@@ -86,6 +86,7 @@ limit = 0.5;
 current_dir = 1;
 hover = true;
 image_speed = 0;
+last_v_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -177,10 +178,12 @@ if hover == true
     {
     //stops the floating animation
     hover = false;
+    last_v_speed=vspeed;
     vspeed = 0;
     
     //Selects the text and assigns it to a slot
     counter +=1;
+//    show_debug_message(" incremented counter, now is = " + string(counter));
     switch counter
         {
         case 1:

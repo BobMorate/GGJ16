@@ -63,8 +63,10 @@ switch counter
            instance_destroy();
            with obj_05
            instance_destroy();
-        case 6: 
-           with obj_01
+        }
+        
+if (counter&gt;5){
+    with obj_01
            instance_destroy();
            with obj_02
            instance_destroy();
@@ -76,7 +78,9 @@ switch counter
            instance_destroy();
            with obj_06
            instance_destroy();
-        }    
+}
+        
+            
 counter = 0;       
 obj_PaperBox.eligible = true;
 obj_PaperBox.vspeed = 0.1;
@@ -85,6 +89,13 @@ audio_play_sound(snd_whoosh,1,false);
 with obj_Button_StartRit instance_destroy();
 with obj_reset instance_destroy();
 
+
+for (var i = 0; i&lt;10; i++){
+    global.scrolls[| i].hover=true;
+    global.scrolls[| i].vspeed=global.scrolls[| i].last_v_speed;
+    global.scrolls[| i].hover=true;
+          
+}
 </string>
           </argument>
         </arguments>

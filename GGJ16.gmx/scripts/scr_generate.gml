@@ -39,13 +39,13 @@ for (var i = 0; i < 6; i += 1){
     if(ds_list_empty(global.rit)){
         global.rit[| i]=global.gr[| irandom(59)];  
         global.pool[| i]=global.rit[| i];
-        show_debug_message("0  candidate = " + global.pool[| i]);
+        //show_debug_message("0  candidate = " + global.pool[| i]);
         continue;
     }  
     else {
         do {
             candidate = global.gr[| irandom(59)];
-            show_debug_message(string(i) + "  candidate = " + candidate);
+            //show_debug_message(string(i) + "  candidate = " + candidate);
         } until (ds_list_find_index(global.rit, candidate)==-1);
         
         global.rit[| i]=candidate;
@@ -61,7 +61,7 @@ for (var i = 6; i < 10; i += 1){
     
     do {
         candidate = global.gr[| irandom(59)];
-        show_debug_message(string(i) + "  candidate = " + candidate);
+        //show_debug_message(string(i) + "  candidate = " + candidate);
     } until (ds_list_find_index(global.pool, candidate)==-1);
        
     global.pool[| i]=candidate;
@@ -74,28 +74,27 @@ for (var i = 6; i < 10; i += 1){
 
 show_debug_message("");
 show_debug_message("Ritual BEFORE shuffling is " + formatWordLists(global.rit));
-show_debug_message("  Pool BEFORE shuffling is " + formatWordLists(global.pool));
 show_debug_message("");
+//show_debug_message("  Pool BEFORE shuffling is " + formatWordLists(global.pool));
+
     
 
 // This works, but I have to fix display issues after shuffling, uncomment when solved
 //ds_list_shuffle(global.rit);
-//ds_list_shuffle(global.pool);
+ds_list_shuffle(global.pool);
 //show_debug_message("Ritual AFTER shuffling is " + formatWordLists(global.rit));
-//show_debug_message("  Pool AFTER shuffling is " + formatWordLists(global.pool));
+show_debug_message("  Pool AFTER shuffling is " + formatWordLists(global.pool));
 //show_debug_message("");
 
 
 
-for (var i = 0; i < 6; i++)  
+for (var i = 0; i < 5; i++)  
     {   
-    //v_id = instance_create(random_range(100,(room_width - 100)),random_range(100,(room_height - 100)),obj_PaperBox)
-    var v_id;  
     global.scrolls[| i] = instance_create(700,90+100*i,obj_PaperBox);  
     with (global.scrolls[| i])
         {
         is_winner = 1;
-        word = global.rit[| i];
+        word = global.pool[| i];
         draw_self();
         show_debug_message("word " + string(i) + " = " + word);
         slot = i;                    
@@ -103,15 +102,13 @@ for (var i = 0; i < 6; i++)
     }
 
 
-for (var d = 0; d < 4; d++)
+for (var d = 0; d < 5; d++)
     {
-    //v_id = instance_create(random_range(100,(room_width - 100)),random_range(100,(room_height - 100)),obj_PaperBox)  
-    var v_id;
-    global.scrolls[| d+6] = instance_create(1000,210+100*d,obj_PaperBox);  
-    with (global.scrolls[| d+6])
+    global.scrolls[| d+5] = instance_create(1000,90+100*d,obj_PaperBox);  
+    with (global.scrolls[| d+5])
         {
         is_winner = 0;
-        word = global.pool[| d+6];
+        word = global.pool[| d+5];
         show_debug_message("word " + string(d) + " = " + word);
         draw_self();
         slot = -1;                    
