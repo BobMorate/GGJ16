@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("counter " + string(counter));
+            <string>//show_debug_message("counter " + string(counter));
 switch counter
         {
         case 1:

@@ -183,7 +183,7 @@ if hover == true
     
     //Selects the text and assigns it to a slot
     counter +=1;
-//    show_debug_message(" incremented counter, now is = " + string(counter));
+
     switch counter
         {
         case 1:

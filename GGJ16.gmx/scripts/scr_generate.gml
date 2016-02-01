@@ -96,7 +96,7 @@ for (var i = 0; i < 5; i++)
         is_winner = 1;
         word = global.pool[| i];
         draw_self();
-        show_debug_message("word " + string(i) + " = " + word);
+        //show_debug_message("word " + string(i) + " = " + word);
         slot = i;                    
         }
     }
@@ -109,7 +109,7 @@ for (var d = 0; d < 5; d++)
         {
         is_winner = 0;
         word = global.pool[| d+5];
-        show_debug_message("word " + string(d) + " = " + word);
+        //show_debug_message("word " + string(d) + " = " + word);
         draw_self();
         slot = -1;                    
         }

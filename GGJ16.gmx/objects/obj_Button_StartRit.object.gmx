@@ -96,37 +96,37 @@ if clickable = true
     {
         show_debug_message("");
         show_debug_message("SELECTION is " + formatWordLists(global.selection));
-        //show_debug_message("counter  is " + string(counter));
-        //Mastermind comparation: 
-        //checks if word exists within the ritual, and "colours" it yellow
+        show_debug_message("");
         
+        //checks which words in the selection are parte of the ritual
         for (var i = 0; i&lt;6; i++){
             var pos = ds_list_find_index(global.pool, global.selection[| i]);
+
             if (ds_list_find_index(global.rit, global.selection[| i])!=-1) {
                 global.feedback[| i]= 1; 
                 global.scrolls[| pos].image_index=2;
-                show_debug_message("pinto de aamrillo - " + global.scrolls[| i].word);      
+                show_debug_message("    " + global.scrolls[| pos].word + " presente en el Ritual -&gt; pinto de amarillo");              
             }
             else {
-                //make it "red" or do nothing?
                 global.feedback[| i]= 0; 
-                global.scrolls[| i].image_index=3;
-                show_debug_message("pinto de rojo - " + global.scrolls[| i].word);
+                global.scrolls[| pos].image_index=3;
+                show_debug_message("          " + global.scrolls[| pos].word + " no está en el Ritual -&gt; pinto de GRIS");
             }
         }
         
         
         //checks if existing words are in their correct positions and colours them "green"
-       
-            for (var i = 0; i&lt;6; i++){
-                var pos = ds_list_find_index(global.pool, global.selection[| i]);
-                if (global.selection[| i]==global.rit[| i]) {
-                    //make i "green" but not visibly yet       
-                    global.feedback[| i]= 2; 
-                    global.scrolls[| pos].image_index=1;
-                    show_debug_message("pinto de verde - " + global.scrolls[| i].word);
-                }
+        show_debug_message("");
+        
+        for (var i = 0; i&lt;6; i++){
+            var pos = ds_list_find_index(global.pool, global.selection[| i]);
+            if (global.selection[| i]==global.rit[| i]) {
+
+                global.feedback[| i]= 2; 
+                global.scrolls[| pos].image_index=1;
+                show_debug_message("    " + global.scrolls[| pos].word + " se seleccionó en el lugar correcto -&gt; pinto de verde");
             }
+        }
         
         
         //decreases number of "lives" and checks game over condition
@@ -144,10 +144,11 @@ if clickable = true
             audio_stop_all();
             room_goto(rm_gameover);
         }
-        
+
         
         //displays feedback somehow
-        
+
+        show_debug_message("");        
         show_debug_message("SELECTION guesses are " + formatWordLists(global.feedback));
         show_debug_message("");
         show_debug_message("Remaining tries: " + string(global.lives));
